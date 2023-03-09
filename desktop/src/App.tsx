@@ -1,13 +1,16 @@
 import React from 'react'
+
+//COMPONENTS, RESOURCES, CONSTANTS
 import './App.css'
 import './styles/main.scss'
+import './styles/app.scss'
+import { HomePageContainer } from './containers/index'
 
-function App() {
-  return (
-    <div className="App">
-      <h1>REACT-REDUX TRAIN PROJECT</h1>
-    </div>
-  )
-}
+const App = () => (
+  <div className="App">
+    <h1>REACT-REDUX TRAIN PROJECT</h1>
+    <HomePageContainer />
+  </div>
+)
 
 export default App

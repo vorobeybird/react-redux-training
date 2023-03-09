@@ -1,0 +1,223 @@
+.df {
+  display: flex;
+}
+
+.df-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.df-align-center {
+  display: flex;
+  align-items: center;
+}
+
+.df-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.df-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.position-rel {
+  position: relative;
+}
+
+.position-abs {
+  position: absolute;
+}
+
+.display-none {
+  display: none;
+}
+
+.center-img {
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: contain;
+  font-size: 14px;
+  line-height: 12px;
+}
+
+.circle-img {
+  border-radius: 50%;
+}
+
+.width-all {
+  width: 100%;
+}
+
+.height-all {
+  height: 100%;
+}
+
+.df-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.df-column-end {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.df-align {
+  display: flex;
+  align-items: center;
+}
+
+.df-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.df-column-start {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.df-column-js-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.df-column-js-between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.df-around {
+  display: flex;
+  justify-content: space-around;
+}
+
+.df-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.df-start-between {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.margin-10 {
+  margin: 10px;
+}
+
+.margin-btm-5 {
+  margin-bottom: 5px;
+}
+
+.margin-btm-10 {
+  margin-bottom: 10px;
+}
+
+.margin-btm-15 {
+  margin-bottom: 15px;
+}
+
+.margin-btm-20 {
+  margin-bottom: 20px;
+}
+
+.margin-btm-30 {
+  margin-bottom: 30px;
+}
+
+.margin-btm-40 {
+  margin-bottom: 40px;
+}
+
+.margin-btm-50 {
+  margin-bottom: 50px;
+}
+
+.margin-btm-60 {
+  margin-bottom: 60px;
+}
+
+.margin-top-10 {
+  margin-top: 10px;
+}
+
+.margin-top-15 {
+  margin-top: 15px;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+.margin-top-30 {
+  margin-top: 30px;
+}
+
+.margin-top-35 {
+  margin-top: 35px;
+}
+
+.margin-top-40 {
+  margin-top: 40px;
+}
+
+.margin-top-50 {
+  margin-top: 50px;
+}
+
+.margin-top-60 {
+  margin-top: 60px;
+}
+
+.margin-right-5 {
+  margin-right: 5px;
+}
+
+.margin-right-10 {
+  margin-right: 10px;
+}
+
+.margin-right-15 {
+  margin-right: 15px;
+}
+
+.margin-left-5 {
+  margin-left: 5px;
+}
+
+.margin-left-10 {
+  margin-left: 10px;
+}
+
+.margin-left-15 {
+  margin-left: 15px;
+}
+
+.padding-10 {
+  padding: 10px;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+a.link-disabled {
+  opacity: 0.7;
+  cursor: not-allowed !important;
+  border: 1px solid #e1e4e9 !important;
+}
