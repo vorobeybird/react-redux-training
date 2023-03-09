@@ -1,17 +1,19 @@
 import React from 'react'
-import Counter from '../../components/Counter/Counter'
-import ControlInput from '../../components/ControlInput/ControlInput'
 
-const HomePage = (): JSX.Element => {
-  console.log('HomePage')
+//COMPONENTS, RESOURCES, CONSTANTS
+import WrapperHoc from '../../components/WrapperHoc'
+import { ControlInput, Counter } from '../../components'
+import { UsersPageContainer } from '../../containers'
 
-  return (
-    <div>
-      <ControlInput />
+const HomePage = (): JSX.Element => (
+  <div>
+    <ControlInput />
+    <WrapperHoc>
       <Counter />
-      <Counter />
-    </div>
-  )
-}
+    </WrapperHoc>
+    <Counter />
+    <UsersPageContainer />
+  </div>
+)
 
 export default React.memo(HomePage)

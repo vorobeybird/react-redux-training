@@ -7,8 +7,6 @@ const Counter = (): JSX.Element => {
     setCounter(increase ? counter + 1 : counter - 1)
   }, [counter])
 
-  console.log('counter')
-
   return (
     <div className="df">
       <p>{counter}</p>

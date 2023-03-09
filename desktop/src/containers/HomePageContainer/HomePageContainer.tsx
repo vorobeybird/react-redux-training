@@ -1,11 +1,10 @@
 import React from 'react'
-import HomePage from '../../pages/HomePage/HomePage'
 
-const HomePageContainer = (): JSX.Element => {
-  console.log('HomePageContainer')
-  return (
-    <HomePage />
-  )
-}
+//COMPONENTS, RESOURCES, CONSTANTS
+import { HomePage } from '../../pages'
+
+const HomePageContainer = (): JSX.Element => (
+  <HomePage />
+)
 
 export default HomePageContainer
