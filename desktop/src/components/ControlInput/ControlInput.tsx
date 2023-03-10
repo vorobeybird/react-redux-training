@@ -1,6 +1,6 @@
 import React from 'react'
 
-//COMPONENTS, RESOURCES, CONSTANTS
+// COMPONENTS, RESOURCES, CONSTANTS
 import useDebounce from '../../hooks/useDebunce'
 
 const ControlInput = (): JSX.Element => {
@@ -18,7 +18,7 @@ const ControlInput = (): JSX.Element => {
   }, [debouncedValue])
 
   return (
-    <div className="df">
+    <div>
       <input
         type="text"
         value={value}
