@@ -1,0 +1,25 @@
+.navigation__container {
+  padding: 20px;
+  margin-right: 30px;
+  max-width: 218px;
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+}
+
+.navigation__element {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 13px;
+  border-radius: 8px;
+  transition: .3s;
+  color: #89868D;
+
+  &.active {
+    background-color: #F4671F;
+    color: #fff;
+  }
+}
+
+

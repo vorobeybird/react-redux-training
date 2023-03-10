@@ -13,6 +13,10 @@
   "rules": {
     "semi": [2, "never"],
     "no-use-before-define": "off",
+    "import/prefer-default-export": "off",
+    "no-unused-expressions": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-shadow": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
     "react/jsx-filename-extension": [ "warn", {"extensions": [".tsx"]} ],
     "import/extensions": [

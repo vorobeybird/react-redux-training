@@ -1,24 +1,21 @@
 import React from 'react'
 
-//COMPONENTS, RESOURCES, CONSTANTS
-import { UsersPage } from '../../pages'
-import { UserType } from '../../types/types'
-import WrapperHoc from '../../components/WrapperHoc'
+// COMPONENTS, RESOURCES, CONSTANTS
+import {UsersPage} from '../../pages'
+import {UserType} from '../../types/types'
 
 const UsersPageContainer = () => {
   const [users, setUsers] = React.useState<Array<UserType>>([])
 
-  fetch('https://jsonplaceholder.typicode.com/users')
+  !users.length && fetch('https://jsonplaceholder.typicode.com/users')
     .then((response) => response.json())
     .then((json) => setUsers(json))
 
   return (
-    <WrapperHoc>
-      <UsersPage
-        users={users}
-      />
-    </WrapperHoc>
+    <UsersPage
+      users={users}
+    />
   )
 }
 
-export default UsersPageContainer
+export default React.memo(UsersPageContainer)

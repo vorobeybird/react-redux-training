@@ -1,15 +1,16 @@
 import React from 'react'
 
-//COMPONENTS, RESOURCES, CONSTANTS
+// COMPONENTS, RESOURCES, CONSTANTS
 import './App.css'
 import './styles/main.scss'
 import './styles/app.scss'
-import { HomePageContainer } from './containers/index'
+import Routing from './routers/Routing'
+import Sidebar from './components/Sidebar/Sidebar'
 
 const App = () => (
-  <div className="App">
-    <h1>REACT-REDUX TRAIN PROJECT</h1>
-    <HomePageContainer />
+  <div className="App df">
+    <Sidebar />
+    <Routing />
   </div>
 )
 

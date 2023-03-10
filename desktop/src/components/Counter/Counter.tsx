@@ -8,7 +8,7 @@ const Counter = (): JSX.Element => {
   }, [counter])
 
   return (
-    <div className="df">
+    <div>
       <p>{counter}</p>
       <button type="button" onClick={changeCounterValue(true)}>increase</button>
       <button type="button" onClick={changeCounterValue(false)}>decrease</button>
