@@ -1,15 +1,22 @@
 import React from 'react'
 
 // COMPONENTS, RESOURCES, CONSTANTS
-import {UsersPage} from '../../pages'
-import {UserType} from '../../types/types'
+import { UsersPage } from '../../pages'
+import { clearUsersStateAC, getUsersTC } from '../../store/users/actions'
+import { useAppDispatch, useAppSelector } from '../../store/store'
 
 const UsersPageContainer = () => {
-  const [users, setUsers] = React.useState<Array<UserType>>([])
+  const dispatch = useAppDispatch()
 
-  !users.length && fetch('https://jsonplaceholder.typicode.com/users')
-    .then((response) => response.json())
-    .then((json) => setUsers(json))
+  const users = useAppSelector((state) => state.users.users)
+
+  React.useEffect(() => {
+    dispatch(getUsersTC())
+
+    return () => {
+      dispatch(clearUsersStateAC())
+    }
+  }, [])
 
   return (
     <UsersPage
