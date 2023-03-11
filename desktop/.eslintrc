@@ -17,6 +17,7 @@
     "no-unused-expressions": "off",
     "default-param-last": "off",
     "@typescript-eslint/no-explicit-any": "off",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     "max-len": ["error",{"code": 130}],
     "no-shadow": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
