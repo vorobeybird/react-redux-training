@@ -10,7 +10,9 @@ import Sidebar from './components/Sidebar/Sidebar'
 const App = () => (
   <div className="App df">
     <Sidebar />
-    <Routing />
+    <div className="app__content">
+      <Routing />
+    </div>
   </div>
 )
 

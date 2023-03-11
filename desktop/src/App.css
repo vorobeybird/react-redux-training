@@ -1,7 +1,12 @@
 .App {
   height: 100vh;
   text-align: center;
-  padding: 10px;
+  background-color: #F5F5F5;
+}
+
+.app__content {
+  padding: 15px;
+  width: 100%;
 }
 
 
