@@ -2,19 +2,20 @@ import React from 'react'
 
 // COMPONENTS, RESOURCES, CONSTANTS
 import { UsersPage } from '../../pages'
-import { clearUsersStateAC, getUsersTC } from '../../store/users/actions'
-import { useAppDispatch, useAppSelector } from '../../store/store'
+import { useAppSelector } from '../../store/store'
+import useFetching from '../../hooks/useFetching'
+import { useActions } from '../../hooks/useActions'
 
 const UsersPageContainer = () => {
-  const dispatch = useAppDispatch()
-
+  const action = useActions()
+  const [fetchUsers, isLoading, error] = useFetching(() => action.getUsersTC(), () => { console.log('Callback COMPLETED') })
   const users = useAppSelector((state) => state.users.users)
 
   React.useEffect(() => {
-    dispatch(getUsersTC())
+    fetchUsers()
 
     return () => {
-      dispatch(clearUsersStateAC())
+      action.clearUsersStateAC()
     }
   }, [])
 

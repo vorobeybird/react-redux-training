@@ -12,6 +12,8 @@
 .user__ava-container {
   height: 100px;
   width: 100px;
+  display: flex;
+  align-items: center;
 
   img {
     border-radius: 25%;

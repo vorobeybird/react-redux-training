@@ -2,6 +2,7 @@ import { Dispatch } from 'redux'
 import UsersConstants from './constants.types'
 import { UserType } from '../../types/types'
 import { AppThunkType, GetAppStateType } from '../store'
+import { getUsers } from '../../services/usersService'
 
 // AC
 const setUsersAC = (users: Array<UserType>) => ({
@@ -26,9 +27,7 @@ export const getUsersTC = (): AppThunkType => async (dispatch: Dispatch<ActionsU
   const store = getStore().users.users[0].name
   // console.log('user name from store:', store)
 
-  await fetch('https://jsonplaceholder.typicode.com/users')
-    .then((response) => response.json())
-    .then((json) => {
-      dispatch(setUsersAC(json))
-    })
+  const users = await getUsers()
+
+  dispatch(setUsersAC(users))
 }
