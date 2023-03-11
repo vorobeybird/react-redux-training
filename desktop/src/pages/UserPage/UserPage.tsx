@@ -2,11 +2,13 @@ import React from 'react'
 import { useParams, useNavigate, useLocation } from 'react-router-dom'
 
 // COMPONENTS, RESOURCES, CONSTANTS
-import { useAppDispatch, useAppSelector } from '../../store/store'
-import { clearUserStateAC, getUserTC } from '../../store/user/actions'
+import { useAppSelector } from '../../store/store'
 import './styles.scss'
+import useFetching from '../../hooks/useFetching'
+import { useActions } from '../../hooks/useActions'
 
 const UserPage = () => {
+  const action = useActions()
   // work with params
   const { id } = useParams()
   // work with navigation
@@ -14,15 +16,14 @@ const UserPage = () => {
   // work with location
   const location = useLocation()
 
-  const dispatch = useAppDispatch()
-
   const user = useAppSelector((state) => state.user.user)
+  const [fetchUser, isLoading, error] = useFetching((opt: string) => action.getUserTC(opt))
 
   React.useEffect(() => {
-    id && dispatch(getUserTC(id))
+    id && fetchUser(id)
 
     return () => {
-      dispatch(clearUserStateAC())
+      action.clearUserStateAC()
     }
   }, [])
 
@@ -31,11 +32,17 @@ const UserPage = () => {
   return (
     <div className="user__container df-column-center">
       <div className="user__ava-container margin-btm-15">
-        <img
-          src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
-          alt="user ava"
-          className="center-img"
-        />
+        {
+          isLoading
+            ? <p>Loading...</p>
+            : (
+              <img
+                src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+                alt="user ava"
+                className="center-img"
+              />
+            )
+        }
       </div>
       <p className="margin-right-10 margin-btm-15">
         <span className="margin-right-10">Name:</span>
