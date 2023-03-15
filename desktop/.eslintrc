@@ -13,6 +13,7 @@
   "rules": {
     "semi": [2, "never"],
     "no-use-before-define": "off",
+    "no-param-reassign": 0,
     "import/prefer-default-export": "off",
     "no-unused-expressions": "off",
     "default-param-last": "off",

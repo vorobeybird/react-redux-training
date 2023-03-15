@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import { reduxStore } from './store/store'
+import { reduxStore } from './store/storeToolkit'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,

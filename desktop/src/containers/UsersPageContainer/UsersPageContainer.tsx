@@ -2,27 +2,40 @@ import React from 'react'
 
 // COMPONENTS, RESOURCES, CONSTANTS
 import { UsersPage } from '../../pages'
-import { useAppSelector } from '../../store/store'
-import useFetching from '../../hooks/useFetching'
+import { useAppSelector } from '../../store/storeToolkit'
+import { useLazyGetUsersQuery } from '../../services/users.api'
 import { useActions } from '../../hooks/useActions'
 
 const UsersPageContainer = () => {
-  const action = useActions()
-  const [fetchUsers, isLoading, error] = useFetching(() => action.getUsersTC(), () => { console.log('Callback COMPLETED') })
+  const { setUsers, cleatUsers } = useActions()
+
+  const [fetchUsers, { isLoading: areUsersLoading, data: usersResponse }] = useLazyGetUsersQuery()
   const users = useAppSelector((state) => state.users.users)
 
   React.useEffect(() => {
-    fetchUsers()
+    fetchUsers('')
 
     return () => {
-      action.clearUsersStateAC()
+      cleatUsers()
     }
   }, [])
 
+  React.useEffect(() => {
+    usersResponse && setUsers(usersResponse)
+  }, [usersResponse])
+
   return (
-    <UsersPage
-      users={users}
-    />
+    <div>
+      {
+        areUsersLoading
+          ? <h1>Loading...</h1>
+          : (
+            <UsersPage
+              users={users}
+            />
+          )
+      }
+    </div>
   )
 }
 
