@@ -14,9 +14,13 @@ const UserPage = () => {
 
   const [user, setUser] = React.useState<UserType>()
 
-  !user && fetch(`https://jsonplaceholder.typicode.com/users?id=${id}`)
-    .then((response) => response.json())
-    .then((json) => { setUser(json[0]) })
+  React.useEffect(() => {
+    !user && fetch(`https://jsonplaceholder.typicode.com/users?id=${id}`)
+      .then((response) => response.json())
+      .then((json) => {
+        setUser(json[0])
+      })
+  }, [user])
 
   const goToHomePage = () => () => {
     navigate('/')
