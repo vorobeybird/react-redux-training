@@ -18,6 +18,7 @@ export const reduxStore = configureStore({
     .concat(userApi.middleware),
 })
 
+//setting for refetchOnFocus field
 setupListeners(reduxStore.dispatch)
 
 type RootState = ReturnType<typeof reduxStore.getState>
