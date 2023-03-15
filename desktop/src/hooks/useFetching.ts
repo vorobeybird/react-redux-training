@@ -1,7 +1,6 @@
 import React from 'react'
-import { AppThunkType } from '../store/store'
 
-const useFetching = <OPT>(callback: (options?: any) => AppThunkType, actionCallback?: () => void) => {
+const useFetching = <OPT>(callback: (options?: any) => any, actionCallback?: () => void) => {
   const [isLoading, setIsLoading] = React.useState<boolean>(false)
   const [error, setError] = React.useState<string>('')
 
